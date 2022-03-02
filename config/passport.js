@@ -23,7 +23,7 @@ passport.use(
           const newUser = new User({
             email: profile.emails[0].value,
             googleId: profile.id,
-            profile: newProfile._id
+            profile: newProfile._id,
           })
           newProfile.save(function (err) {
             if (err) return done(err)
@@ -50,7 +50,7 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (id, done) {
   User.findById(id)
   .populate('profile', 'name avatar')
-  .exec(function(err, user) {
+  .exec(function (err, user) {
     done(err, user)
   })
 })

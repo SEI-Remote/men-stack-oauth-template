@@ -21,13 +21,14 @@
 }
 
 /* This pre-loads the siwg focus and active buttons */
-.siwg::after{
-  position:absolute; 
-  width:0; 
-  height:0; 
-  overflow:hidden; 
-  z-index:-1; 
-  content:url(/images/auth/google/siwg_light_pressed.png) url(/images/auth/google/siwg_light_focus.png)
+.siwg::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(/images/auth/google/siwg_light_pressed.png)
+    url(/images/auth/google/siwg_light_focus.png);
 }
 
 /* This hides the siwg alt text and broken image icon */
@@ -38,5 +39,5 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px; 
+  width: 1px;
 }
