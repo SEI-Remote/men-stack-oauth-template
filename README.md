@@ -28,25 +28,17 @@ Re-initialize a git repository:
 ```bash
 git init
 ```
-
-Use the GitHub CLI to create a new project repository on GitHub:
+Use whatever method you'd like to get your project on GitHub. If you're looking for speed though use the GitHub CLI to create a new project repository on GitHub:
 
 ```bash
-gh repo create <name-of-your-app-here>
+gh repo create <name-of-your-app-here> --public --source .
 ```
+Check out the docs [here](https://cli.github.com/manual/gh_repo_create) if you want to learn more about this command. 
 
 Run npm i to fetch the template's dependencies:
 
 ```bash
 npm i
-```
-
-Then, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
 ```
 
 touch a .env file:
@@ -67,6 +59,12 @@ SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
 
-Delete this README.md
+Delete this README.md and finally, make an initial commit:
+
+```bash
+git add .
+git commit -m "initial commit"
+git push -u origin main
+```
 
 You're done!
