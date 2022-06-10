@@ -9,14 +9,14 @@
   "dependencies": {
     "debug": "^4.3.3",
     "dotenv": "^16.0.0",
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.8",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "http-errors": "^2.0.0",
     "method-override": "^3.0.0",
     "mongoose": "^6.2.4",
     "morgan": "^1.10.0",
-    "passport": "^0.5.2",
+    "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0"
   }
 }

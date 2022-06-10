@@ -16,9 +16,11 @@ router.get(
   })
 )
 
-router.get('/logout', function (req, res) {
-  req.logout()
-  res.redirect('/')
+router.get('/logout', function (req, res, next) {
+  req.logout(function(err) {
+    if (err) { return next(err)}
+    res.redirect('/')
+  })
 })
 
 export {
