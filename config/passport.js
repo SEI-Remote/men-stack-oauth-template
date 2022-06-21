@@ -11,8 +11,8 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK,
     },
     function (accessToken, refreshToken, profile, done) {
-      User.findOne({ googleId: profile.id }, function (err, user) {
-        if (err) return done(err)
+      User.findOne({ googleId: profile.id })
+      .then(user => {
         if (user) {
           return done(null, user)
         } else {
@@ -25,19 +25,28 @@ passport.use(
             googleId: profile.id,
             profile: newProfile._id,
           })
-          newProfile.save(function (err) {
+          newProfile.save()
+          .then(()=> {
+            newUser.save()
+            .then(() => {
+              return done(null, newUser) 
+            })
+            .catch(err => {
+              if (err) {
+                // Something went wrong while making a user - delete the profile
+                // we just created to prevent orphan profiles.
+                Profile.findByIdAndDelete(newProfile._id)
+                return done(err)
+              } 
+            })
+          })
+          .catch(err => {
             if (err) return done(err)
           })
-          newUser.save(function (err) {
-            if (err) {
-              // Something went wrong while making a user - delete the profile
-              // we just created to prevent orphan profiles.
-              Profile.findByIdAndDelete(newProfile._id)
-              return done(err)
-            }
-            return done(null, newUser)
-          })
         }
+      })
+      .catch(err => {
+        if (err) return done(err)
       })
     }
   )
