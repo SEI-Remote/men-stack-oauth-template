@@ -9,7 +9,7 @@ router.post(
     "google-one-tap",
     { failureRedirect: "/" },
   ),
-  function (req, res, next) {
+  function (req, res) {
     res.redirect("/");
   }
 );
