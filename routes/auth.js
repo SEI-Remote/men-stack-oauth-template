@@ -3,18 +3,16 @@ import passport from 'passport'
 
 const router = Router()
 
-router.get(
-  '/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-)
-
-router.get(
-  '/google/oauth2callback',
-  passport.authenticate('google', {
-    successRedirect: '/',
-    failureRedirect: '/auth/google',
-  })
-)
+router.post(
+  "/google",
+  passport.authenticate(
+    "google-one-tap",
+    { failureRedirect: "/auth/google" },
+  ),
+  function (req, res, next) {
+    res.redirect("/");
+  }
+);
 
 router.get('/logout', function (req, res, next) {
   req.logout(function(err) {
