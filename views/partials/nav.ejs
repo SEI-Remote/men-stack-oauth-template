@@ -1,5 +1,7 @@
   <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <script defer src="https://accounts.google.com/gsi/client"></script>
+    <!-- BRING IN A STATIC FILE HERE? -->
+    <script defer src="/js/siwg.js"></script>
   <% } %>
 </head>
 <body>
@@ -9,10 +11,13 @@
         <button type="submit">Logout</button>
       </a>
     <% } else { %>
-      <a href="/auth/google" class="siwg-link">
+      <!-- DO NEW BUTTON STUFF HERE!! -->
+      <div id="siwg"></div>
+      <!-- NEW BUTTON ABOVE OLD BUTTON BELOW -->
+      <!-- <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
           <img id="siwg-image" alt="Sign in with Google" />
         </button>
-      </a>
+      </a> -->
     <% } %>
   </nav>
