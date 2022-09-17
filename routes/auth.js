@@ -7,11 +7,8 @@ router.post(
   "/google",
   passport.authenticate(
     "google-one-tap",
-    { failureRedirect: "/" },
+    { failureRedirect: "/", successRedirect: "/"},
   ),
-  function (req, res) {
-    res.redirect("/");
-  }
 );
 
 router.get('/logout', function (req, res, next) {
