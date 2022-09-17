@@ -7,7 +7,7 @@ router.post(
   "/google",
   passport.authenticate(
     "google-one-tap",
-    { failureRedirect: "/auth/google" },
+    { failureRedirect: "/" },
   ),
   function (req, res, next) {
     res.redirect("/");
