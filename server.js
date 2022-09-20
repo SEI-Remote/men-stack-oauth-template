@@ -55,7 +55,7 @@ app.use(
 // passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
-
+// new code here
 app.use(passDataToView)
 
 // router middleware
