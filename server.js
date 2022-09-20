@@ -76,6 +76,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error', {
     title: `🎊 ${err.status || 500} Error`,
+    user: req.user ? req.user : null
   })
 })
 
