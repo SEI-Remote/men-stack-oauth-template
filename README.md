@@ -28,12 +28,8 @@ Re-initialize a git repository:
 ```bash
 git init
 ```
-Use whatever method you'd like to get your project on GitHub. If you're looking for speed though use the GitHub CLI to create a new project repository on GitHub:
 
-```bash
-gh repo create <name-of-your-app-here> --public --source .
-```
-Check out the docs [here](https://cli.github.com/manual/gh_repo_create) if you want to learn more about this command. 
+Create a repo for this project on GitHub and add that remote to your project with `git remote add origin Your-repo-URL-here`.
 
 Run npm i to fetch the template's dependencies:
 
@@ -51,7 +47,6 @@ Fill it with the following:
 
 ```
 DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=http://localhost:3000/auth/google/oauth2callback
 GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -59,7 +54,7 @@ SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
 
-Delete this README.md and finally, make an initial commit:
+Delete this `README.md` file and finally, make an initial commit:
 
 ```bash
 git add .
