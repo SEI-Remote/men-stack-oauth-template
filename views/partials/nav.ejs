@@ -5,18 +5,18 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/auth/logout">
+      <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
       </a>
     <% } else { %>
       <div 
         id="g_id_onload"
         data-client_id="<%= googleClientID %>"
-        data-login_uri="<%= googleLoginURL %>"
+        data-login_uri="/auth/google"
         data-auto_prompt="false"
       ></div>
       <div 
-        class="g_id_signin"
+        class="g_id_signin right"
         data-type="standard"
         data-size="large"
         data-theme="outline"
