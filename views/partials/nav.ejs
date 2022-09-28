@@ -1,5 +1,5 @@
   <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <script defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
 </head>
 <body>
@@ -9,10 +9,20 @@
         <button type="submit">Logout</button>
       </a>
     <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
+      <div 
+        id="g_id_onload"
+        data-client_id="<%= googleClientID %>"
+        data-login_uri="<%= googleLoginURL %>"
+        data-auto_prompt="false"
+      ></div>
+      <div 
+        class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left"
+      ></div>
     <% } %>
   </nav>

@@ -1,5 +1,5 @@
 import passport from 'passport'
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
+import {GoogleOneTapStrategy as GoogleStrategy} from 'passport-google-one-tap'
 import { User } from '../models/user.js'
 import { Profile } from '../models/profile.js'
 
@@ -8,9 +8,9 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: process.env.GOOGLE_CALLBACK,
+      verifyCsrfToken: false,
     },
-    function (accessToken, refreshToken, profile, done) {
+    function (profile, done) {
       User.findOne({ googleId: profile.id })
       .then(user => {
         if (user) {

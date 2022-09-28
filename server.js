@@ -7,6 +7,7 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
+import { passDataToView } from './middleware/middleware.js'
 
 // connect to MongoDB with mongoose
 import('./config/database.js')
@@ -54,6 +55,8 @@ app.use(
 // passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
+// new code here
+app.use(passDataToView)
 
 // router middleware
 app.use('/', indexRouter)
@@ -73,6 +76,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error', {
     title: `🎊 ${err.status || 500} Error`,
+    user: req.user ? req.user : null
   })
 })
 
