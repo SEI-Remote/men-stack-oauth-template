@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 
-const profileSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const profileSchema = new Schema({
   name: String,
   avatar: String,
 }, {

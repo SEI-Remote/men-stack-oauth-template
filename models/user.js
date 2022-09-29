@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
 
-const userSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const userSchema = new Schema({
   email: String,
   googleId: String,
-  profile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profile' },
+  profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,
 })
