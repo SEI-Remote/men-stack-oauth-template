@@ -53,13 +53,14 @@ passport.use(
 )
 
 passport.serializeUser(function (user, done) {
-  done(null, user.id)
+  done(null, user._id)
 })
 
-passport.deserializeUser(function (id, done) {
-  User.findById(id)
+passport.deserializeUser(function (userId, done) {
+  User.findById(userId)
   .populate('profile', 'name avatar')
   .then(user => {
+    console.log(user);
     done(null, user)
   })
   .catch(err => {
