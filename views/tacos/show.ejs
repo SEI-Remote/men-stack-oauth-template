@@ -1,0 +1,10 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <p>From the kitchen of <%= taco.owner.name %>...</p>
+  <h1><%= taco.name %></h1>
+  <h2>This taco is <%= taco.tasty ? 'tasty! 😋' : 'not tasty! 😫' %></h2>
+</section>
+
+<%- include('../partials/footer') %>
