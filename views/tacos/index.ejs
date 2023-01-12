@@ -3,19 +3,6 @@
 
 <section>
   <h1>Tacos! 🌮🌮🌮</h1>
-  <% if (user) { %>
-    <form action="/tacos" method="POST">
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <label>
-        Tasty?
-        <input type="checkbox" name="tasty">
-      </label>
-      <button type="submit">Add 🌮</button>
-    </form>
-  <% } %>
   <h2>All the Tacos!</h2>
 	<ul>
   <% tacos.forEach(taco => { %>
