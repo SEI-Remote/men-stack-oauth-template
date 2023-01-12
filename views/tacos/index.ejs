@@ -19,10 +19,7 @@
   <h2>All the Tacos!</h2>
 	<ul>
   <% tacos.forEach(taco => { %>
-    <li>
-      🌮 
-      <a href="/tacos/<%= taco._id %>"><%= taco.name %></a> is <%= taco.tasty ? 'tasty' : 'not tasty' %>
-    </li>
+    <li>🌮 <%= taco.name %> is <%= taco.tasty ? 'tasty' : 'not tasty' %></li>
   <% }) %>
   </ul>
 </section>

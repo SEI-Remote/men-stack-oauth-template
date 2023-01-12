@@ -27,23 +27,7 @@ function create(req, res) {
   })
 }
 
-function show(req, res) {
-  Taco.findById(req.params.id)
-  .populate('owner')
-  .then(taco => {
-    res.render('tacos/show', {
-      title: "🌮 show",
-      taco
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/tacos')
-  })
-}
-
 export {
   index,
-  create,
-  show
+  create
 }
