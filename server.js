@@ -61,6 +61,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+
 // custom middleware
 app.use(passDataToView)
 
