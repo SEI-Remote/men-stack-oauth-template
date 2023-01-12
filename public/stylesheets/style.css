@@ -1,13 +1,13 @@
 html {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
-*::after {
-  /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default but can be overridden as needed */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
   box-sizing: inherit;
 }
 
@@ -25,6 +25,7 @@ nav {
   color: #1a1a1a;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px;
   min-height: 60px;
 }
@@ -36,6 +37,61 @@ main {
   flex-direction: column;
 }
 
-.right {
-  margin-left: auto;
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p, label, li, button, input {
+  font-size: 18px;
+}
+
+label {
+  font-weight: bold;
+}
+
+section {
+  padding: 50px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+pre {
+  font-size: 14px;
+}
+
+nav > a {
+  margin: 10px 30px;
+  text-decoration: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin: 16px 0;
+}
+
+.link {
+  padding: 10px 0;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.profile-avatar {
+  margin-top: 50px;
 }

@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Tacos! 🌮🌮🌮</h1>
+  <h2>All the Tacos!</h2>
+	<ul>
+  <% tacos.forEach(taco => { %>
+    <li>🌮 <%= taco.name %> is <%= taco.tasty ? 'tasty' : 'not tasty' %></li>
+  <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
