@@ -62,7 +62,7 @@ app.use(passport.session())
 // custom middleware
 app.use(passDataToView)
 
-// mounted routes
+// mount imported routes
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 
