@@ -60,7 +60,6 @@ passport.deserializeUser(function (userId, done) {
   User.findById(userId)
   .populate('profile', 'name avatar')
   .then(user => {
-    console.log(user);
     done(null, user)
   })
   .catch(err => {
