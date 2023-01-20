@@ -62,7 +62,7 @@ app.use(passport.session())
 // custom middleware
 app.use(passDataToView)
 
-// router middleware
+// mounted routes
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 
@@ -71,6 +71,7 @@ app.use(function (req, res, next) {
   next(createError(404))
 })
 
+// error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message
@@ -85,4 +86,6 @@ app.use(function (err, req, res, next) {
   })
 })
 
-export { app }
+export { 
+  app 
+}
