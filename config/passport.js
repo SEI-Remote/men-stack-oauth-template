@@ -1,5 +1,5 @@
 import passport from 'passport'
-import {GoogleOneTapStrategy as GoogleStrategy} from 'passport-google-one-tap'
+import { GoogleOneTapStrategy as GoogleStrategy } from 'passport-google-one-tap'
 import { User } from '../models/user.js'
 import { Profile } from '../models/profile.js'
 
