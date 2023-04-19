@@ -6,7 +6,7 @@ Use this to go build things! 🚀
 
 ## To Use This Template
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+__Replace `<name-of-your-app-here>` (including the `<` and `>`) in the commands below with the name of your app!__
 
 ```bash
 git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
