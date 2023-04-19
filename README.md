@@ -59,7 +59,7 @@ Delete this `README.md` file and finally, make an initial commit:
 ```bash
 git add .
 git commit -m "initial commit"
-git push -u origin main
+git push origin main
 ```
 
 You're done!
